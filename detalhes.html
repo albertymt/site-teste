@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do jogo e recomendações do sistema.">
+    <title>Nostalgic Retro - Detalhes</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header>
+        <h1 class="logo glow-neon-pink"><a href="index.html">NOSTALGIC RETRO</a></h1>
+        <nav>
+            <a href="index.html" class="nav-link">Jogos</a>
+            <a href="premium.html" class="nav-link glow-neon-yellow">Premium</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-details-preview">
+            <a href="index.html" class="btn-retro btn-green btn-back">⬅ VOLTAR AO CATÁLOGO</a>
+            
+            <article class="details-container">
+                <div class="details-left">
+                    <div id="game-cover" class="big-cover">...</div>
+                </div>
+                <div class="details-right">
+                    <h2 id="game-title" class="glow-neon-yellow">Carregando Dados...</h2>
+                    <p id="game-desc" class="desc">Acessando banco de dados local...</p>
+                    <div class="actions">
+                        <button class="btn-retro btn-pink" onclick="alert('Sistema de Ads indisponível.')">📺 VER ANÚNCIOS</button>
+                        <a href="premium.html" class="btn-retro btn-yellow">⭐ ASSINAR PREMIUM</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="suggestions-section">
+            <h2 class="section-title glow-neon-blue">TÍTULOS RELACIONADOS</h2>
+            <div class="games-grid" id="recommendations-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 NOSTALGIC RETRO</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

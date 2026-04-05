@@ -1,0 +1,133 @@
+/* Variáveis do Sistema */
+:root {
+    --bg-dark: #090a0f;
+    --bg-panel: #1a1a24;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+    --neon-yellow: #fbee0f;
+    --neon-blue: #00ffff;
+    --text-light: #e0e0e0;
+    --transition-speed: 0.3s;
+}
+
+/* Reset Global e Scrollbar Customizada */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--neon-blue); }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.scanlines {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%; z-index: 9999; pointer-events: none;
+}
+
+/* Header & Nav */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; border-bottom: 2px solid var(--neon-pink);
+    background: rgba(9, 10, 15, 0.95);
+    backdrop-filter: blur(5px);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+header h1 a { text-decoration: none; font-size: 18px; transition: var(--transition-speed); }
+header h1 a:hover { color: #fff; }
+
+.nav-link { 
+    color: var(--text-light); text-decoration: none; 
+    margin-left: 25px; font-size: 10px; transition: var(--transition-speed); 
+}
+.nav-link:hover { color: var(--neon-blue); text-shadow: 0 0 8px var(--neon-blue); }
+
+/* Classes de Efeito Neon */
+.glow-neon-pink { text-shadow: 0 0 8px var(--neon-pink); color: var(--neon-pink); }
+.glow-neon-green { text-shadow: 0 0 8px var(--neon-green); color: var(--neon-green); }
+.glow-neon-yellow { text-shadow: 0 0 8px var(--neon-yellow); color: var(--neon-yellow); }
+.glow-neon-blue { text-shadow: 0 0 8px var(--neon-blue); color: var(--neon-blue); }
+
+/* Layout Geral */
+section { padding: 60px 5%; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 18px; letter-spacing: 2px; }
+
+/* Terminal Modernizado */
+.terminal-box {
+    background: #050505; border: 2px solid var(--neon-green); padding: 25px;
+    max-width: 500px; margin: 0 auto; color: var(--neon-green); font-size: 10px;
+    box-shadow: inset 0 0 15px rgba(57, 255, 20, 0.1);
+}
+.input-group { display: flex; gap: 15px; margin-top: 20px; }
+.input-group input {
+    flex: 1; background: transparent; border: 1px solid var(--neon-green);
+    color: var(--neon-green); font-family: 'Press Start 2P'; padding: 12px; font-size: 10px;
+    outline: none; transition: var(--transition-speed);
+}
+.input-group input:focus { box-shadow: 0 0 8px var(--neon-green); }
+
+/* Botões Profissionais */
+.btn-retro {
+    font-family: 'Press Start 2P'; padding: 12px 20px; border: none; cursor: pointer;
+    font-size: 10px; text-transform: uppercase; box-shadow: 4px 4px 0 rgba(0,0,0,0.8);
+    transition: all 0.2s ease; text-decoration: none; text-align: center;
+}
+.btn-retro:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0,0,0,0.8); filter: brightness(1.2); }
+.btn-retro:active { transform: translate(2px, 2px); box-shadow: 0 0 0 transparent; }
+.btn-green { background: var(--neon-green); color: #000; }
+.btn-pink { background: var(--neon-pink); color: #fff; }
+.btn-yellow { background: var(--neon-yellow); color: #000; }
+.btn-back { display: inline-block; margin-bottom: 30px; }
+
+/* Grid Flexível e Limpa */
+.games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 40px; }
+.game-card {
+    background: var(--bg-panel); border: 2px solid #333; padding: 20px;
+    text-align: center; cursor: pointer; transition: var(--transition-speed);
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.game-card:hover { 
+    border-color: var(--neon-blue); 
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1); 
+}
+
+.game-cover { height: 130px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-size: 14px; text-shadow: 2px 2px #000; border-radius: 2px; }
+.game-title { font-size: 10px; color: var(--neon-yellow); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Container de Detalhes Aprimorado */
+.details-container {
+    display: flex; background: var(--bg-panel); border: 2px solid var(--neon-pink); 
+    padding: 40px; gap: 40px; align-items: center; box-shadow: 0 0 20px rgba(255, 0, 127, 0.1);
+}
+.big-cover { width: 280px; height: 280px; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 4px solid #000; text-shadow: 3px 3px #000; }
+.details-right { flex: 1; }
+.details-right h2 { font-size: 24px; margin-bottom: 20px; line-height: 1.4; }
+.details-right .desc { font-size: 11px; color: #aaa; margin-bottom: 30px; line-height: 2; }
+.actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+.suggestions-section { border-top: 1px dashed #444; margin-top: 80px; padding-top: 60px; }
+
+/* Planos */
+.plans-container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.plan-card { background: var(--bg-panel); border: 2px solid #333; padding: 40px; width: 300px; text-align: center; transition: var(--transition-speed); }
+.plan-card:hover { border-color: var(--neon-green); box-shadow: 0 0 15px rgba(57, 255, 20, 0.1); }
+.plan-card.highlight { border-color: var(--neon-yellow); transform: scale(1.05); }
+.plan-card ul { list-style: none; font-size: 9px; text-align: left; margin: 30px 0; line-height: 2.5; color: #ccc; }
+
+footer { text-align: center; padding: 40px; font-size: 8px; color: #666; border-top: 1px solid #222; }
+
+@media (max-width: 800px) {
+    .details-container { flex-direction: column; text-align: center; padding: 20px; }
+    .actions { justify-content: center; }
+    .big-cover { width: 100%; height: 250px; }
+}
